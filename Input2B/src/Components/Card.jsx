@@ -3,9 +3,9 @@ import '../Components/Card.css'
 
 function Card(){
 
-    const [numero1, setNumero1] = useState(0)
-    const [numero2, setNumero2] = useState(0)
-    const [Resultado, setResultado] = useState(0)
+    const [numero1, setNumero1] = useState("")
+    const [numero2, setNumero2] = useState("")
+    const [Resultado, setResultado] = useState("")
 
 
     const Sumar = () => {
@@ -34,6 +34,12 @@ function Card(){
     setResultado(division);
    }
 
+   const Limpiar  = () =>{
+    setNumero1("")
+    setNumero2("")
+    setResultado("")
+   } 
+
    
 
     return(
@@ -50,7 +56,8 @@ function Card(){
                 <a id= "boton" href="#" className="btn btn-primary" onClick={Sumar}>Sumar</a> 
                 <a id= "boton" href="#" className="btn btn-primary" onClick={Restar}>Restar</a> 
                 <a id= "boton" href="#" className="btn btn-primary" onClick={Multiplicar}>Multiplicar</a> 
-                <a id= "boton" href="#" className="btn btn-primary" on onClick={Division}>Dividir</a> 
+                <a id= "boton" href="#" className="btn btn-primary" onClick={Division}>Dividir</a> 
+                <a id= "btnLimpiar" href="#" className="btn btn-primary" onClick={Limpiar} >Limpiar</a> 
                 <br/><br/>    
                 <h5>El resultado es: {Resultado}</h5>
             </div>

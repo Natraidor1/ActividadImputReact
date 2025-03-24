@@ -12,3 +12,14 @@ background-color: antiquewhite;
     width: 500px;
 }
     
+#btnLimpiar{
+    margin: 5em 1em 0em 1em;
+    width: 150px;
+    background-color: burlywood;
+}
+
+
+#btnLimpiar:hover{
+    transition: 1s;
+    background-color: blue;
+}
