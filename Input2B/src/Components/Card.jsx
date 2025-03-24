@@ -1,4 +1,40 @@
+import { useState } from "react";
+import '../Components/Card.css'
+
 function Card(){
+
+    const [numero1, setNumero1] = useState(0)
+    const [numero2, setNumero2] = useState(0)
+    const [Resultado, setResultado] = useState(0)
+
+
+    const Sumar = () => {
+
+        const suma = parseFloat(numero1) + parseFloat(numero2);
+        setResultado(suma);
+    };
+
+
+   const Restar = () =>{
+
+        const resta = parseFloat(numero1) - parseFloat(numero2);
+        setResultado(resta);
+   };
+
+   const Multiplicar = () =>{
+
+    const multiplicar = parseFloat(numero1) * parseFloat(numero2);
+    setResultado(multiplicar);
+
+   };
+
+   const Division = () =>{
+
+    const division = parseFloat(numero1) / parseFloat(numero2);
+    setResultado(division);
+   }
+
+   
 
     return(
     
@@ -8,10 +44,15 @@ function Card(){
             <div className="card">
             <div className="card-body">
                 <h6 className="card-title">Numero 1</h6>
-                <input className="card-title" type="text"></input>
+                <input className="card-title" type="text" value={numero1} onChange={(texto) => setNumero1(texto.target.value)}></input>
                 <h6 className="card-text">Numero 2</h6>
-                <input className="card-text" type="text"></input>
-                <a id= "boton" href="#" className="btn btn-primary">Calcular</a>
+                <input className="card-text" type="text" value={numero2} onChange={(texto) => setNumero2(texto.target.value)}></input><br/>
+                <a id= "boton" href="#" className="btn btn-primary" onClick={Sumar}>Sumar</a> 
+                <a id= "boton" href="#" className="btn btn-primary" onClick={Restar}>Restar</a> 
+                <a id= "boton" href="#" className="btn btn-primary" onClick={Multiplicar}>Multiplicar</a> 
+                <a id= "boton" href="#" className="btn btn-primary" on onClick={Division}>Dividir</a> 
+                <br/><br/>    
+                <h5>El resultado es: {Resultado}</h5>
             </div>
             </div>
         </div>
@@ -19,6 +60,6 @@ function Card(){
     </div>
 
     );
-}
+};
 
 export default Card;
